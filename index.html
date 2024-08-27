@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fogo e Faca</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .canvas-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .canvas-container > div {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .canvas-container canvas {
+            border: 1px solid #000;
+        }
+        #brush-controls, #controls {
+            margin-top: 20px;
+        }
+        #brush-controls label, #brush-controls input {
+            margin-right: 10px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fogo e Faca</h1>
+    
+    <div id="question-container">
+        <!-- A pergunta atual será inserida aqui dinamicamente -->
+    </div>
+    
+    <div id="controls">
+        <button id="previousBtn">Pergunta Anterior</button>
+        <button id="nextBtn">Próxima Pergunta</button>
+    </div>
+
+    <div id="result" style="display: none;">
+        <h2>Resultado</h2>
+        <p>Você acertou <span id="correctCount">0</span> de 22 questões.</p>
+        <p>Você errou <span id="incorrectCount">0</span> de 22 questões.</p>
+        <p>Questões que precisam de prática:</p>
+        <ul id="reviewList"></ul>
+    </div>
+    
+    <!-- Controles para cor e tamanho do pincel -->
+    <div id="brush-controls">
+        <label for="colorPicker">Cor:</label>
+        <input type="color" id="colorPicker" value="#000000">
+        
+        <label for="brushSize">Tamanho do Pincel:</label>
+        <input type="number" id="brushSize" value="5" min="1" max="50">
+    </div>
+    
+    <div id="additional-controls">
+        <button id="restartBtn">Reiniciar</button>
+        <button id="finalizarBtn">Resultado</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
